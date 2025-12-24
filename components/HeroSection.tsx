@@ -35,7 +35,7 @@ export default function HeroSection() {
         .from(
           ".hero-cta",
           {
-            opacity: 0,
+            // opacity: 0,
             y: 30,
             duration: 0.5,
             stagger: 0.15,
@@ -66,6 +66,22 @@ export default function HeroSection() {
     return () => ctx.revert();
   }, []);
 
+  // ============================================
+  // DATA
+  // ============================================
+
+  const personalInfo = {
+    name: "Suthep Jantawee",
+    role: "Full Stack Developer",
+    location: "Thailand",
+    experience: "3+ years",
+    email: "bananammm0001@gmail.com",
+    phone: "0901834036",
+    available: true,
+    github: "https://github.com/bananafaraday",
+    linkedin: "https://linkedin.com/in/suthep-jantawee",
+  }
+
   return (
     <section
       ref={sectionRef}
@@ -80,52 +96,42 @@ export default function HeroSection() {
             <div className="terminal-dot yellow" />
             <div className="terminal-dot green" />
             <span className="ml-4 text-[#8b949e] text-sm font-mono">
-              terminal.dev
+              title: portfolio.dev - zsh
             </span>
           </div>
 
           {/* Terminal Body */}
-          <div className="terminal-body space-y-4">
-            <div className="terminal-line flex">
-              <span className="text-[#8b949e]">$</span>
-              <span className="ml-2 text-[#f0f6fc]">whoami</span>
-            </div>
-            <div className="terminal-line">
-              <span className="text-[#00ff9f]">&gt;</span>
-              <span className="ml-2 text-[#f0f6fc]">Suthep Jantawee</span>
-            </div>
-            <div className="terminal-line">
-              <span className="text-[#00ff9f]">&gt;</span>
-              <span className="ml-2 text-[#58a6ff]">Full Stack Developer</span>
+          <div className="space-y-4 p-6">
+            <div>
+              <span className="text-code-green">$</span>
+              <span className="ml-2 text-text-primary">cat about.json</span>
             </div>
 
-            <div className="terminal-line flex mt-6">
-              <span className="text-[#8b949e]">$</span>
-              <span className="ml-2 text-[#f0f6fc]">cat skills.json</span>
-            </div>
-            <div className="terminal-line">
-              <span className="text-[#00ff9f]">&gt;</span>
-              <span className="ml-2">
-                <span className="text-[#8b949e]">[</span>
-                <span className="text-[#98c379]">&quot;React&quot;</span>
-                <span className="text-[#8b949e]">, </span>
-                <span className="text-[#98c379]">&quot;Next.js&quot;</span>
-                <span className="text-[#8b949e]">, </span>
-                <span className="text-[#98c379]">&quot;TypeScript&quot;</span>
-                <span className="text-[#8b949e]">, </span>
-                <span className="text-[#98c379]">&quot;Node.js&quot;</span>
-                <span className="text-[#8b949e]">]</span>
-              </span>
+            <div className="pl-4 border-l-2 border-editor-border">
+              <pre className="text-lg">
+                <span className="syntax-punctuation">{"{"}</span>{"\n"}
+                <span className="syntax-property ml-4">&quot;name&quot;</span>
+                <span className="syntax-punctuation">: </span>
+                <span className="syntax-string">&quot;{personalInfo.name}&quot;</span>
+                <span className="syntax-punctuation">,</span>{"\n"}
+                <span className="syntax-property ml-4">&quot;role&quot;</span>
+                <span className="syntax-punctuation">: </span>
+                <span className="syntax-string">&quot;{personalInfo.role}&quot;</span>
+                <span className="syntax-punctuation">,</span>{"\n"}
+                <span className="syntax-property ml-4">&quot;experience&quot;</span>
+                <span className="syntax-punctuation">: </span>
+                <span className="syntax-string">&quot;{personalInfo.experience}&quot;</span>
+                <span className="syntax-punctuation">,</span>{"\n"}
+                {/* <span className="syntax-property ml-4">&quot;location&quot;</span>
+                <span className="syntax-punctuation">: </span>
+                <span className="syntax-string">&quot;{personalInfo.location}&quot;</span>
+                <span className="syntax-punctuation">,</span>{"\n"} */}
+                <span className="syntax-punctuation">{"}"}</span>
+              </pre>
             </div>
 
-            <div className="terminal-line flex mt-6">
-              <span className="text-[#8b949e]">$</span>
-              <span className="ml-2 text-[#f0f6fc]">
-                <span ref={typingRef}></span>
-                <span className="cursor" />
-              </span>
-            </div>
           </div>
+
         </div>
 
         {/* CTAs */}
